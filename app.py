@@ -1,7 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
 
-genai.configure(api_key="AQ.Ab8RN6I0NcyJKOsvQ-NRmFCO2cXOIPklksXVoPSSPC_W7RmQmQ")  # Replace with your actual API key
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel("gemini-flash-latest")  # Replace with the desired model name
 
 st.set_page_config(page_title="Prompting Basics Playground", page_icon="🔮💻🔮")
